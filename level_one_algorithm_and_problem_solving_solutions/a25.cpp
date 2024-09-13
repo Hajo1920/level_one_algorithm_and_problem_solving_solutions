@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+
+short ReadInput(short Age){
+    cout << "Write your Age ? ";
+    cin >> Age;
+
+    return Age;
+}
+
+short LoopUntilCorrectInput(short Age){
+        while(Age < 20 || Age > 45){
+        cout << "Please enter Age between 18 and 45 only !" << endl;
+        cout << "Write your Age ? ";
+        cin >> Age;
+
+    }
+    return Age;
+}
+
+bool CalculateAgeRange(short Age){
+     if(Age>=20 && Age<=45){
+      
+        return true;
+    }else{
+       
+        return false;
+    };
+}
+
+void PrintResult(bool result){
+    if(result) cout << "Your age is valid.";
+    else cout << "Your age is unvalid.";
+}
+
+int main(){
+
+    short Age;
+
+    PrintResult(CalculateAgeRange(LoopUntilCorrectInput(ReadInput(Age))));
+
+	return 0;
+}
